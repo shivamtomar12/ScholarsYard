@@ -10,7 +10,7 @@ gem 'rails', '3.2.15'
 group :development, :test do
   gem 'sqlite3'
   gem 'debugger'
-  gem 'Foreman'
+  gem 'foreman'
 end
 
 group :production do
