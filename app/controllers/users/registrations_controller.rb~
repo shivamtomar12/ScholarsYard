@@ -1,0 +1,14 @@
+class Users::RegistrationsController < Devise::RegistrationsController
+  # def new
+  #   super
+  # end
+
+  def create
+     
+     puts "hello hi!!!"
+     hash=User.find(1)
+     hash.user_type="student"
+     hash.save
+   end
+
+end
