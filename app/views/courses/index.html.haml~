@@ -9,7 +9,8 @@
       %th Description
       %th Resources
   %tbody
-    
+    hellon #{session[:user_type]}
+    #{session[:user_type]}
     - @courses.each do |course|
       %tr
         %td= course.course_name 
