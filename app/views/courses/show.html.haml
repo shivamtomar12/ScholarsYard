@@ -1,0 +1,15 @@
+-# in app/views/courses/show.html.haml
+
+%h2 Details about #{@course.course_name}
+
+%ul#details
+  %li
+    Resources:
+    = @course.resources
+%h3 Description:
+
+%p#description= @course.course_description
+
+-if @user_type == "content_manager"
+  = button_to 'Delete', course_path(@course), :method => :delete, :confirm => 'Are you sure?'
+= link_to 'Back to course list', courses_path

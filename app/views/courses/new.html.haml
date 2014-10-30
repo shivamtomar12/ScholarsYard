@@ -1,0 +1,14 @@
+%h1 Add a new course
+
+= form_tag courses_path do
+
+  = label :course, :course_name, 'Course Name'
+  = text_field :course, :course_name
+
+  = label :course, :course_description, 'Description'
+  = text_field :course, :course_description
+
+  = label :course, :resources, 'Resources (Link to the video)'
+  = text_field :course, :resources
+
+  = submit_tag 'Submit'
