@@ -2,12 +2,13 @@
 %h1 All Courses
 
 
-%table#courses
+%table#courses{class => 'table table-striped'}
   %thead
     %tr
       %th Course Name
       %th Description
       %th Resources
+      %th More Info
   %tbody
     
     - @courses.each do |course|
@@ -16,7 +17,7 @@
         %td= course.course_description
         %td= course.resources
         %td= link_to "More about #{course.course_name}", course_path(course)
-        %td= "#{@user_type}"
+        
 -if @user_type == "content_manager"
   = link_to 'Add a new course', new_course_path
 
