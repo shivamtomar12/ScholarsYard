@@ -4,6 +4,6 @@ class CreateCourses < ActiveRecord::Migration
 
      add_column(:courses, :created_at, :datetime)
       add_column(:courses, :updated_at, :datetime)
-    
+    end
   end
 end

@@ -3,6 +3,8 @@ TestPro::Application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations", :sessions => "sessions"}
   resources :courses
   root to: "home#index"
+  match '/admin' => 'admin#index', :as => :admin
+  match "/admin/change_user" => "admin#change_user", :via => :post, :as => :change_user
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

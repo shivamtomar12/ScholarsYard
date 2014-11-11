@@ -5,9 +5,15 @@ class SessionsController < Devise::SessionsController
    end
 
    def create
-     super
+     
      hash=User.find_by_email(current_user.email)
      session[:user_type]=hash.user_type
+     if(session[:user_type]=='admin')
+      redirect_to admin_path
      
+     else
+     super
+     end
    end
+  
 end

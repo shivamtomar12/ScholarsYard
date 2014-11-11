@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141030011155) do
+ActiveRecord::Schema.define(:version => 20141111040853) do
 
   create_table "courses", :force => true do |t|
     t.string  "course_name"
@@ -19,6 +19,11 @@ ActiveRecord::Schema.define(:version => 20141030011155) do
     t.string  "resources"
     t.boolean "is_active"
     t.boolean "is_deprecated"
+  end
+
+  create_table "enrollments", :force => true do |t|
+    t.integer "user_id"
+    t.integer "course_id"
   end
 
   create_table "users", :force => true do |t|

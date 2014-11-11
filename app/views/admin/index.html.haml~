@@ -1,0 +1,21 @@
+
+
+%h3 The following users are currently present in the system: 
+
+= form_tag change_user_path, :method => :post, :id => 'change_usertype_form' do
+  = will_paginate @users
+  %table#users{:class => 'table table-striped'}
+    %thead
+      %tr
+        %th User Email
+        %th User Type
+        %th Select
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td= user[:email] 
+          %td= user[:user_type]
+          %td= check_box_tag "system_user[#{user[:email]},#{user[:user_type]}]"
+  = submit_tag 'Change user type'
+
+= link_to 'Return to course page', courses_path
