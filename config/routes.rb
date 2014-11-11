@@ -1,6 +1,6 @@
 TestPro::Application.routes.draw do
 
-  devise_for :users, :controllers => {:registrations => "registrations", :sessions => "sessions"}
+  devise_for :users, :controllers => {:registrations => "registrations", :sessions => "sessions", :passwords => "passwords"}
   resources :courses
   root to: "home#index"
   match '/admin' => 'admin#index', :as => :admin
