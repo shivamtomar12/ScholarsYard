@@ -35,6 +35,6 @@ class CoursesController < ApplicationController
 	 else
   	 flash[:notice] = "Already registered for the course!!!"
          end
-         redirect_to courses_path
+         redirect_to enrolls_path
         end
 end

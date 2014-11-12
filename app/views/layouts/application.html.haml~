@@ -28,12 +28,14 @@
                   = link_to "Sign in", new_user_session_path
               %li= link_to "Home", root_path
               %li= link_to "Courses", courses_path
+              - if user_signed_in? and session[:user_type]=='user' 
+                  %li= link_to "Registration", enrolls_path
               %li= link_to "About Us"
               %li= link_to "FAQ"
-    
+    #usersignedin
     - if user_signed_in? 
       Signed in as #{current_user.email}, you are logged in as "#{current_user.user_type}"
-
+    #adminchangeuser
     - if session[:user_type]=='admin'
       = link_to "Change User type", admin_path
       

@@ -1,0 +1,19 @@
+-#  This file is app/views/enrolls/index.html.haml
+%h1 All Registered Courses
+
+%table#enrolls{:class => 'table table-striped'}
+  %thead
+    %tr
+      %th Course Name
+      %th Resources
+      %th Drop Course
+  %tbody
+    - @enrolls.each do |course|
+      %tr
+        - courseobj = Course.find(course.course_id)
+        %td= courseobj.course_name
+        %td= courseobj.resources
+        %td= link_to "  More about #{courseobj.course_name}", enroll_path(course)
+
+
+

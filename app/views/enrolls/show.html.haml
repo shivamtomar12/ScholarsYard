@@ -1,0 +1,18 @@
+-# in app/views/enrolls/show.html.haml
+- courseobj = Course.find(@enrollment.course_id)
+%h2 Details about #{courseobj.course_name}
+
+%ul#details
+  %li
+    Resources:
+    = courseobj.resources
+%h3 Description:
+
+%p#description= courseobj.course_description
+
+
+
+= button_to 'Drop', enroll_path(@enrollment), :method => :delete, :confirm => 'Are you sure?'
+
+
+= link_to 'Back to course list', enrolls_path
