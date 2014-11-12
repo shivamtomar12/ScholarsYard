@@ -6,6 +6,10 @@ class SessionsController < Devise::SessionsController
 
    def create
      # to fix the nil email problem
+     if current_user==nil
+     flash[:notice] = "Please enter correct credentials"
+     super
+     else
      hash=User.find_by_email(current_user.email)
      session[:user_type]=hash.user_type
      if(session[:user_type]=='admin')
@@ -13,6 +17,7 @@ class SessionsController < Devise::SessionsController
      
      else
      super
+     end
      end
    end
   

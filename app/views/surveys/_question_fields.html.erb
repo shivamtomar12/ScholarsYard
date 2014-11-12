@@ -1,0 +1,12 @@
+<p>
+<hr />
+   <%= f.label :content, "Questions" %>
+   <%= f.text_area :content, :rows => 3 %><br /> 
+   <%= f.check_box :_destroy %>
+   <%= f.label :_destroy, "Remove Question" %><br />
+</p>
+<p>
+<%= f.fields_for :answers do |builder| %>
+      <%= render 'answer_fields', :f => builder %>
+<% end %>
+</p>

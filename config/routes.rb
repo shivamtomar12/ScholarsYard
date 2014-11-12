@@ -1,5 +1,7 @@
 TestPro::Application.routes.draw do
 
+  resources :surveys
+
   devise_for :users, :controllers => {:registrations => "registrations", :sessions => "sessions", :passwords => "passwords"}
   resources :courses
   root to: "home#index"

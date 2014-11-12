@@ -17,6 +17,7 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
+  gem 'nifty-generators', '>= 0.4.0'
 
   gem 'twitter-bootstrap-rails'
 # Gems used only for assets and not required
@@ -48,3 +49,5 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+gem "mocha", :group => :test

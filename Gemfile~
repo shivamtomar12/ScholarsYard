@@ -12,7 +12,7 @@ group :development, :test do
   gem 'debugger'
   gem 'foreman'
 end
-
+gem 'will_paginate'
 group :production do
   gem 'pg'
   gem 'rails_12factor'
