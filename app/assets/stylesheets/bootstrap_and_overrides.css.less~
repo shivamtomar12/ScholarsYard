@@ -1,5 +1,5 @@
 @import "twitter/bootstrap/bootstrap";
-body { padding-top: 120px;}
+body { padding-top: 70px;}
 @import "twitter/bootstrap/responsive";
 
 hr { 
@@ -9,7 +9,7 @@ hr {
     margin-left: auto;
     margin-right: auto;
     border-style: inset;
-    border-width: 3px;
+    border-width: 2px;
 }
 
 // Set the correct sprite paths
