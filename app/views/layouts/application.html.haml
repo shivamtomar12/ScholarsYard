@@ -32,14 +32,14 @@
                 %li= link_to "Registration", enrolls_path
               - elsif user_signed_in? and session[:user_type]=='content_manager' 
                 %li= link_to "Manage Quiz", surveys_path
+              - elsif user_signed_in? and session[:user_type]=='admin' 
+                %li= link_to "Manage User Role", admin_path
               %li= link_to "About Us"
               %li= link_to "FAQ"
     #usersignedin
     - if user_signed_in? 
       Signed in as #{current_user.email}, you are logged in as "#{current_user.user_type}"
-    #adminchangeuser
-    - if session[:user_type]=='admin'
-      = link_to "Change User type", admin_path
+    
       
     
 	  

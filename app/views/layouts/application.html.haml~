@@ -7,7 +7,6 @@
     <![endif]-->
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
-    = javascript_include_tag :default, :cache => true
     = csrf_meta_tags
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
   %body
@@ -32,7 +31,7 @@
               - if user_signed_in? and session[:user_type]=='user' 
                 %li= link_to "Registration", enrolls_path
               - elsif user_signed_in? and session[:user_type]=='content_manager' 
-                %li= link_to "Create Quiz", surveys_path
+                %li= link_to "Manage Quiz", surveys_path
               %li= link_to "About Us"
               %li= link_to "FAQ"
     #usersignedin
