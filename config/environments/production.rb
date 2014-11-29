@@ -69,10 +69,11 @@ TestPro::Application.configure do
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found)
   config.i18n.fallbacks = true
+  #config.action_controller.asset_host = "http://floating-harbor-1026.herokuapp.com"
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
-
+  #config.middleware.use PDFKit::Middleware, :print_media_type => true, :wkhtmltopdf => '/home/saasbook/.rvm/gems/ruby-1.9.3-p448/bin/wkhtmltopdf/bin/wktmltopdf'
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5

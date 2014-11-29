@@ -10,13 +10,13 @@
       %th Resources
       %th More Info
   %tbody
-    
-    - @courses.each do |course|
-      %tr
-        %td= course.course_name 
-        %td= course.course_description
-        %td= course.resources
-        %td= link_to "More about #{course.course_name}", course_path(course)
+    -if @courses
+      - @courses.each do |course|
+        %tr
+          %td= course.course_name 
+          %td= course.course_description
+          %td= course.resources
+          %td= link_to "More about #{course.course_name}", course_path(course)
         
 -if @user_type == "content_manager"
   = link_to 'Add a new course', new_course_path

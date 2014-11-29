@@ -13,7 +13,7 @@ TestPro::Application.configure do
 
   # Compress JavaScripts and CSS
   config.assets.compress = true
-  config.action_mailer.default_url_options = { :host => 'http://floating-harbor-1026.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'floating-harbor-1026.herokuapp.com' }
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = false
   config.action_mailer.delivery_method = :smtp
@@ -23,11 +23,11 @@ TestPro::Application.configure do
   config.action_mailer.smtp_settings = {
 	address: "smtp.gmail.com",
 	port: 587,
-	domain: ENV["GMAIL_DOMAIN"],
+	domain: "scholarsyard.info@gmail.com",
 	authentication: "plain",
 	enable_starttls_auto: true,
-	user_name: ENV["GMAIL_USERNAME"],
-	password: ENV["GMAIL_PASSWORD"]
+	user_name: "scholarsyard.info",
+	password: "kingdomcomes"
   }
   # Generate digests for assets URLs
   config.assets.digest = true
@@ -69,10 +69,11 @@ TestPro::Application.configure do
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found)
   config.i18n.fallbacks = true
+  config.action_controller.asset_host = "http://floating-harbor-1026.herokuapp.com"
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
-
+  #config.middleware.use PDFKit::Middleware, :print_media_type => true, :wkhtmltopdf => '/home/saasbook/.rvm/gems/ruby-1.9.3-p448/bin/wkhtmltopdf/bin/wktmltopdf'
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5

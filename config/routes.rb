@@ -1,14 +1,16 @@
 TestPro::Application.routes.draw do
 
   resources :surveys
-
+  resources :quizs
   devise_for :users, :controllers => {:registrations => "registrations", :sessions => "sessions", :passwords => "passwords"}
   resources :courses
   root to: "home#index"
   resources :enrolls
   resources :manages
   match '/admin' => 'admin#index', :as => :admin
+
   match "/admin/change_user" => "admin#change_user", :via => :post, :as => :change_user
+  get "/certificates" => 'certificates#index', :as => :certificates
   match "/courses/id" => "courses#enroll", :via => :post, :as => :enroll_user
   # The priority is based upon order of creation:
   # first created -> highest priority.

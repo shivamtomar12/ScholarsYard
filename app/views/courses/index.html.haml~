@@ -2,7 +2,7 @@
 %h1 All Courses
 
 
-%table#courses{class => 'table table-striped'}
+%table#courses{:class => 'table table-striped'}
   %thead
     %tr
       %th Course Name

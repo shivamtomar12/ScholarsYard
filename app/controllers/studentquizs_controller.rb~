@@ -1,6 +1,6 @@
 class SurveysController < ApplicationController
   def index
-    @surveys = Survey.where(:email => current_user.email)
+    @surveys = Survey.all
   end
 
   def show
@@ -9,7 +9,7 @@ class SurveysController < ApplicationController
 
   def new
     @survey = Survey.new
-    5.times do
+    3.times do
       question = @survey.questions.build
       4.times { question.answers.build }
     end

@@ -13,7 +13,7 @@
         - courseobj = Course.find(course.course_id)
         %td= courseobj.course_name
         %td= courseobj.resources
-        %td= link_to "  More about #{course.course_id}", enroll_path(course)
+        %td= link_to "  More about #{courseobj.course_name}", enroll_path(course)
 
 
 

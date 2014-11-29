@@ -1,0 +1,16 @@
+-# edit.html.haml using partial
+
+%h1 Edit Existing Course
+
+= form_tag course_path(@course), :method => :put do
+
+  = label :course, :course_name, 'Course Name'
+  = text_field :course, :course_name
+
+  = label :course, :course_description, 'Description'
+  = text_field :course, :course_description
+
+  = label :course, :resources, 'Resources (Link to the video)'
+  = text_field :course, :resources
+
+  = submit_tag 'Update Course Info'

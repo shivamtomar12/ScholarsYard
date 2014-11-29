@@ -12,6 +12,9 @@ group :development, :test do
   gem 'debugger'
   gem 'foreman'
 end
+gem 'pdfkit', '~> 0.5.4'
+gem 'wkhtmltopdf'
+gem 'wkhtmltopdf-binary'
 gem 'will_paginate'
 group :production do
   gem 'pg'

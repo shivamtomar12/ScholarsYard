@@ -1,0 +1,25 @@
+-# in app/views/quizs/show.html.haml
+
+
+%h2 #{@quiz.name}
+
+= form_tag quizs_path do
+  %ul#details
+    - @x=0  
+    - @quiz.questions.each do |question| 
+      %h3= question.content
+      - @x=@x+1
+      - for answer in question.answers
+        = radio_button_tag @x,answer.content 
+        #{answer.content} <br />
+      
+
+ 
+= link_to 'Back to quiz list', quizs_path
+
+
+
+
+
+
+

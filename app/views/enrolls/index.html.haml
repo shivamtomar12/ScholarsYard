@@ -15,5 +15,5 @@
         %td= courseobj.resources
         %td= link_to "  More about #{courseobj.course_name}", enroll_path(course)
 
-
+= link_to 'Download Certificate', certificates_path(:format => "pdf")
 

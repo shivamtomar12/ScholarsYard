@@ -1,0 +1,18 @@
+-#  This file is app/views/enrolls/index.html.haml
+%h1 All Quizzes available
+
+%table#quizzes{:class => 'table table-striped'}
+  %thead
+    %tr
+      %th Quiz Name
+      %th Quiz Instructor
+      %th Take Quiz
+  %tbody
+    - @eligibleSurvey.each do |quiz|
+      %tr
+        %td= quiz.name
+        %td= quiz.email
+        %td= link_to "Take quiz #{quiz.name}", quiz_path(quiz)
+
+
+

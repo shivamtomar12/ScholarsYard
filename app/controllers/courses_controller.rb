@@ -2,12 +2,18 @@ class CoursesController < ApplicationController
 	def index
 		@user_type = session[:user_type]
 		puts @user_type
-		@courses = Course.all
+		if @user_type=="user" or current_user==nil 
+    		@courses = Course.all
+                else
+		@courses = Course.where(:instructor_email => current_user.email)
+		end
 	end
 	def new
 	end
 	def create
-		@course = Course.create!(params[:course])
+		val=params[:course]
+		val[:instructor_email]=current_user.email
+		@course = Course.create!(val)
     	flash[:notice] = "#{@course.course_name} was successfully created."
     	redirect_to courses_path
 	end

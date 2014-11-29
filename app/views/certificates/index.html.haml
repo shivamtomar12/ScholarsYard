@@ -1,0 +1,38 @@
+-#  This file is app/views/enrolls/index.html.haml
+%h1
+  %u ScholarsYard
+<br />
+<br />
+- val= User.find_by_email(current_user.email)
+- courseEnrolled=Enroll.where(:user_id => val.id)
+
+- if courseEnrolled==[]
+  %h3 Certificate is available only on course completion!!!
+- else
+  %h3 CERTIFICATE OF COMPLETION
+
+ 
+  %h3 THIS AWARD CERTIFIES THAT 
+
+
+  %h3 
+    Student:
+    %u #{current_user.email}
+
+  %h3 HAS SUCCESSFULLY COMPLETED THE FOLLOWING COURSES
+
+
+  - courseEnrolled.each do |i|
+    - course=Course.find(i.course_id)
+    %li
+      %h3= course.course_name
+
+  
+
+  
+
+
+
+
+
+
