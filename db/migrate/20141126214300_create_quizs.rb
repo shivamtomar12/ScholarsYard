@@ -2,7 +2,7 @@ class CreateQuizs < ActiveRecord::Migration
   def self.up
     create_table :quizzes do |t|
       t.string :studentemail
-      t.string :quizid
+      t.integer :quizid
       t.string :quizanswer
       t.string :quizquestion
       t.timestamps
