@@ -1,5 +1,0 @@
-class AddContentManagerToQuiz < ActiveRecord::Migration
-  def change
-    add_column :quizzes, :email, :string
-  end
-end
