@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141203060826) do
+ActiveRecord::Schema.define(:version => 20141203074648) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -54,11 +54,11 @@ ActiveRecord::Schema.define(:version => 20141203060826) do
 
   create_table "quizzes", :force => true do |t|
     t.string   "studentemail"
-    t.string   "quizid"
+    t.integer  "quizid",       :limit => 255
     t.string   "quizanswer"
     t.string   "quizquestion"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
     t.string   "score"
   end
 
