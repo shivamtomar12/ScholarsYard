@@ -29,6 +29,7 @@ class SurveysController < ApplicationController
 
   def edit
     @survey = Survey.find(params[:id])
+    puts params[:is_correct]
   end
 
   def update

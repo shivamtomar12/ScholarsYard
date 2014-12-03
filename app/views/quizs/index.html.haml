@@ -7,12 +7,18 @@
       %th Quiz Name
       %th Quiz Instructor
       %th Take Quiz
+      %th Score
   %tbody
     - @eligibleSurvey.each do |quiz|
       %tr
         %td= quiz.name
         %td= quiz.email
-        %td= link_to "Take quiz #{quiz.name}", quiz_path(quiz)
+        - if Quiz.find_by_studentemail(current_user.email) && Quiz.find_by_quizid(quiz.id)
+          %td= link_to  "Already taken (click for the answers)", quiz
+          %td #{Quiz.where("studentemail = ? AND quizid = ?", current_user.email, quiz.id)[0].score}%
+        - else
+          %td= link_to "Take quiz #{quiz.name}", quiz_path(quiz)
+        %td 
 
 
 

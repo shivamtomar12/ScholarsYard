@@ -11,15 +11,20 @@
     <%=h question.content %>
     <ul>
     <% for answer in question.answers %>
-      <li><%=h answer.content %></li>
+      <li><%=h answer.content %>&nbsp;<%=h answer.is_correct %></li>
     <% end %>
     </ul>
   </li>
 <% end %>
 </ol>
 
-<p>
-  <%= link_to "Edit", edit_survey_path(@survey) %> |
-  <%= link_to "Destroy", @survey, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", surveys_path %>
-</p>
+<% if current_user.user_type == "content_manager" %>
+  <p>
+    <%= link_to "Edit", edit_survey_path(@survey) %> |
+    <%= link_to "Destroy", @survey, :confirm => 'Are you sure?', :method => :delete %> |
+    <%= link_to "View All", surveys_path %>
+  </p>
+<% end %>
+<% if current_user.user_type == "user" %>
+  <%= link_to "View All", quizs_path %>
+<% end %>

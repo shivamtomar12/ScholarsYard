@@ -8,7 +8,8 @@ TestPro::Application.routes.draw do
   resources :enrolls
   resources :manages
   match '/admin' => 'admin#index', :as => :admin
-
+  match '/courses/deprecate(/:id)' => 'courses#deprecate', :as => :deprecate
+    match '/courses/release(/:id)' => 'courses#release', :as => :release
   match "/admin/change_user" => "admin#change_user", :via => :post, :as => :change_user
   get "/certificates" => 'certificates#index', :as => :certificates
   match "/courses/id" => "courses#enroll", :via => :post, :as => :enroll_user

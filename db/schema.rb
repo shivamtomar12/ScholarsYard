@@ -11,13 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141126214300) do
+ActiveRecord::Schema.define(:version => 20141203060826) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
     t.string   "content"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.boolean  "is_correct"
   end
 
   create_table "courses", :force => true do |t|
@@ -27,6 +28,11 @@ ActiveRecord::Schema.define(:version => 20141126214300) do
     t.boolean "is_active"
     t.boolean "is_deprecated"
     t.string  "instructor_email"
+  end
+
+  create_table "enrollments", :force => true do |t|
+    t.integer "user_id"
+    t.integer "course_id"
   end
 
   create_table "enrolls", :force => true do |t|
@@ -46,15 +52,6 @@ ActiveRecord::Schema.define(:version => 20141126214300) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "quizs", :force => true do |t|
-    t.string   "studentemail"
-    t.string   "quizid"
-    t.string   "quizanswer"
-    t.string   "quizquestion"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
-
   create_table "quizzes", :force => true do |t|
     t.string   "studentemail"
     t.string   "quizid"
@@ -62,24 +59,7 @@ ActiveRecord::Schema.define(:version => 20141126214300) do
     t.string   "quizquestion"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
-  end
-
-  create_table "studentquiz", :force => true do |t|
-    t.string   "studentemail"
-    t.string   "quizid"
-    t.string   "quizanswer"
-    t.string   "quizquestion"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
-
-  create_table "studentquizs", :force => true do |t|
-    t.string   "studentemail"
-    t.string   "quizid"
-    t.string   "quizanswer"
-    t.string   "quizquestion"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.string   "score"
   end
 
   create_table "surveys", :force => true do |t|

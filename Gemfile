@@ -9,7 +9,7 @@ gem 'rails', '3.2.15'
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'debugger'
+  #gem 'debugger'
   gem 'foreman'
 end
 gem 'pdfkit', '~> 0.5.4'

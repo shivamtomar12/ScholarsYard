@@ -1,5 +1,10 @@
 -# in app/views/courses/show.html.haml
 
+- @temp= Course.find(@course.id)
+
+-if session[:user_type] == "user" && @temp.is_deprecated == true
+  The course #{@course.course_name} is going to be deprecated in a weeks time.
+
 %h2 Details about #{@course.course_name}
 
 %ul#details
@@ -13,7 +18,10 @@
 
 -if session[:user_type] == "content_manager"
   = button_to 'Delete', course_path(@course), :method => :delete, :confirm => 'Are you sure?'
+  = button_to 'Release', release_path(@course), :confirm => 'Are you sure?'
+  = button_to 'Deprecate', deprecate_path(@course), :confirm => 'Are you sure?'
 -elsif session[:user_type] == "user" 
+
   = button_to 'Enroll', course_path(@course), :method => :put
 
 = link_to 'Back to course list', courses_path

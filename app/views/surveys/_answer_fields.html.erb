@@ -1,6 +1,8 @@
 <p>
   <%= f.label :content, "Answer" %>
   <%= f.text_field :content %><br />
+  <%= f.check_box :is_correct, {}, "true", "false" %>
+  <%= f.label :is_correct, "Make this the correct answer" %>
   <%= f.check_box :_destroy %>
   <%= f.label :_destroy, "Remove Answer" %>
 </p>
